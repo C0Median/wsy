@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>五十音</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+</head>
+<style>
+[v-cloak]{
+  display: none !important;
+}
+
+.mytitle{
+  text-align: center;
+  font-size: 26px;
+}
+
+body { background-color:rgb(255, 226, 239); }
+.page-section {
+  margin-bottom: 20px;
+}
+
+.flex-wrp {
+  display: flex;
+  justify-content: center;
+}
+
+.a1 {
+  display: block;
+  background: rgb(240, 183, 208);
+  width: 20%;
+  height: 36px;
+  color: black;
+  border-radius: 10px;
+  margin: 3px;
+  text-align: center;
+  line-height: 36px;
+  border-style: solid;
+  font-size: 16px;
+}
+.noa1{
+  opacity:0;
+}
+.w1{
+  position: fixed;
+  top: 0%;
+  /* background: rgba(0, 0, 0, 0.5); */
+  width: 100%;
+  height: 100%;
+  padding-top: 40%;
+}
+.w2{
+  display: none;
+}
+.ww{
+  display: block;
+  margin: auto;
+  background: rgb(241, 158, 194);
+  width: 280px;
+  height: 280px;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 280px;
+  border-style: solid;
+  font-size: 50px;
+}
+.an{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 99px;
+  background: rgb(255, 67, 148);
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+}
+</style>
+
+<body>
+<div id="app">
+  <div class="mytitle">清音</div>
+  <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="a" v-cloak v-on:click="wsycc">{{pt?"あ":"ア"}} a</div>
+    <div class="a1" data-mp3url="i" v-cloak v-on:click="wsycc">{{pt?"い":"イ"}} i</div>
+    <div class="a1" data-mp3url="u" v-cloak v-on:click="wsycc">{{pt?"う":"ウ"}} u</div>
+    <div class="a1" data-mp3url="e" v-cloak v-on:click="wsycc">{{pt?"え":"エ"}} e</div>
+    <div class="a1" data-mp3url="o" v-cloak v-on:click="wsycc">{{pt?"お":"オ"}} o</div>
+  </div>
+  <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="ka" v-cloak v-on:click="wsycc">{{pt?"か":"カ"}} ka</div>
+    <div class="a1" data-mp3url="ki" v-cloak v-on:click="wsycc">{{pt?"き":"キ"}} ki</div>
+    <div class="a1" data-mp3url="ku" v-cloak v-on:click="wsycc">{{pt?"く":"ク"}} ku</div>
+    <div class="a1" data-mp3url="ke" v-cloak v-on:click="wsycc">{{pt?"け":"ケ"}} ke</div>
+    <div class="a1" data-mp3url="ko" v-cloak v-on:click="wsycc">{{pt?"こ":"コ"}} ko</div>
+  </div>
+  <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="sa" v-cloak v-on:click="wsycc">{{pt?"さ":"サ"}} sa</div>
+    <div class="a1" data-mp3url="si" v-cloak v-on:click="wsycc">{{pt?"し":"シ"}} si</div>
+    <div class="a1" data-mp3url="su" v-cloak v-on:click="wsycc">{{pt?"す":"ス"}} su</div>
+    <div class="a1" data-mp3url="se" v-cloak v-on:click="wsycc">{{pt?"せ":"セ"}} se</div>
+    <div class="a1" data-mp3url="so" v-cloak v-on:click="wsycc">{{pt?"そ":"ソ"}} so</div>
+  </div>
+  <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="ta" v-cloak v-on:click="wsycc">{{pt?"た":"タ"}} ta</div>
+    <div class="a1" data-mp3url="ci" v-cloak v-on:click="wsycc">{{pt?"ち":"チ"}} ti</div>
+    <div class="a1" data-mp3url="cu" v-cloak v-on:click="wsycc">{{pt?"つ":"ツ"}} tsu</div>
+    <div class="a1" data-mp3url="te" v-cloak v-on:click="wsycc">{{pt?"て":"テ"}} te</div>
+    <div class="a1" data-mp3url="to" v-cloak v-on:click="wsycc">{{pt?"と":"ト"}} to</div>
+  </div>
+  <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="na" v-cloak v-on:click="wsycc">{{pt?"な":"ナ"}} na</div>
+    <div class="a1" data-mp3url="ni" v-cloak v-on:click="wsycc">{{pt?"に":"ニ"}} ni</div>
+    <div class="a1" data-mp3url="nu" v-cloak v-on:click="wsycc">{{pt?"ぬ":"ヌ"}} nu</div>
+    <div class="a1" data-mp3url="ne" v-cloak v-on:click="wsycc">{{pt?"ね":"ネ"}} ne</div>
+    <div class="a1" data-mp3url="no" v-cloak v-on:click="wsycc">{{pt?"の":"ノ"}} no</div>
+  </div>
+  <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="ha" v-cloak v-on:click="wsycc">{{pt?"は":"ハ"}} ha</div>
+    <div class="a1" data-mp3url="hi" v-cloak v-on:click="wsycc">{{pt?"ひ":"ヒ"}} hi</div>
+    <div class="a1" data-mp3url="hu" v-cloak v-on:click="wsycc">{{pt?"ふ":"フ"}} hu</div>
+    <div class="a1" data-mp3url="he" v-cloak v-on:click="wsycc">{{pt?"へ":"ヘ"}} he</div>
+    <div class="a1" data-mp3url="ho" v-cloak v-on:click="wsycc">{{pt?"ほ":"ホ"}} ho</div>
+  </div>
+  <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="ma" v-cloak v-on:click="wsycc">{{pt?"ま":"マ"}} ma</div>
+    <div class="a1" data-mp3url="mi" v-cloak v-on:click="wsycc">{{pt?"み":"ミ"}} mi</div>
+    <div class="a1" data-mp3url="mu" v-cloak v-on:click="wsycc">{{pt?"む":"ム"}} mu</div>
+    <div class="a1" data-mp3url="me" v-cloak v-on:click="wsycc">{{pt?"め":"メ"}} me</div>
+    <div class="a1" data-mp3url="mo" v-cloak v-on:click="wsycc">{{pt?"も":"モ"}} mo</div>
+  </div>
+    <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="ya" v-cloak v-on:click="wsycc">{{pt?"や":"ヤ"}} ya</div>
+    <div class="a1" data-mp3url="i" v-cloak v-on:click="" style="opacity:0">{{pt?"い":"イ"}} i</div>
+    <div class="a1" data-mp3url="yu" v-cloak v-on:click="wsycc">{{pt?"ゆ":"ユ"}} yu</div>
+    <div class="a1" data-mp3url="e" v-cloak v-on:click="" style="opacity:0">{{pt?"え":"エ"}} e</div>
+    <div class="a1" data-mp3url="yo" v-cloak v-on:click="wsycc">{{pt?"よ":"ヨ"}} yo</div>
+  </div>
+  <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="ra" v-cloak v-on:click="wsycc">{{pt?"ら":"ラ"}} ra</div>
+    <div class="a1" data-mp3url="ri" v-cloak v-on:click="wsycc">{{pt?"り":"リ"}} ri</div>
+    <div class="a1" data-mp3url="ru" v-cloak v-on:click="wsycc">{{pt?"る":"ル"}} ru</div>
+    <div class="a1" data-mp3url="re" v-cloak v-on:click="wsycc">{{pt?"れ":"レ"}} re</div>
+    <div class="a1" data-mp3url="ro" v-cloak v-on:click="wsycc">{{pt?"ろ":"ロ"}} ro</div>
+  </div>
+  <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="wa" v-cloak v-on:click="wsycc">{{pt?"わ":"ワ"}} wa</div>
+    <div class="a1" data-mp3url="i" v-cloak v-on:click="" style="opacity:0">{{pt?"い":"イ"}} i</div>
+    <div class="a1" data-mp3url="u" v-cloak v-on:click="" style="opacity:0">{{pt?"う":"ウ"}} u</div>
+    <div class="a1" data-mp3url="e" v-cloak v-on:click="" style="opacity:0">{{pt?"え":"エ"}} e</div>
+    <div class="a1" data-mp3url="o" v-cloak v-on:click="" style="opacity:0">{{pt?"お":"ヲ"}} o</div>
+  </div>
+  <div class="flex-wrp" style="flex-direction:row;">
+    <div class="a1" data-mp3url="n" v-cloak v-on:click="wsycc">{{pt?"ん":"ン"}} n</div>
+    <div class="a1" v-cloak v-on:click="" style="opacity:0">{{pt}}</div>
+    <div class="a1" v-cloak v-on:click="" style="opacity:0"></div>
+    <div class="a1" v-cloak v-on:click="" style="opacity:0"></div>
+    <div class="a1" v-cloak v-on:click="" style="opacity:0"></div>
+  </div>
+  <!-- <div>{{mp3s}}</div> -->
+  <audio muted autoplay="autoplay" style='display:none' :src="mp3s" id='audio'></audio>
+  <div class="an" v-cloak v-on:click="cpt">{{pt?"平":"片"}}</div>
+</div>
+
+<!-- <div class="{{wt?'w1':'w2'}}" v-cloak v-on:click="cwt">
+  <div class="ww">{{wt}}</div>
+</div> -->
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+// const aaa = wx.createInnerAudioContext();
+
+// var pt=true;
+// var wt=false;
+var mp3s;
+var app = new Vue({
+  el:'#app',
+  data:{
+    pt:true,
+    // wt,
+    mp3s:'#',
+  },
+  methods:{
+  wsycc: function (e) {
+    var aaa=document.getElementById('audio');
+    // aaa.pause();
+    var mp3url = e.target.getAttribute('data-mp3url');
+    var mp3e;
+    src = 'learn50/' + mp3url + '.mp3';
+    if(this.mp3s!=src){
+      this.mp3s=src;
+      mp3e=false;
+      // console.log(this.mp3s);
+    }
+    else{
+      mp3e=aaa.ended;
+      console.log(mp3e);
+    }
+
+    if(mp3e){
+      aaa.play();
+    }
+    // aaa.muted = false;
+    // console.log(aaa.muted);
+
+    // console.log(src);
+    // this.setData({
+    //   wt: true,
+    // })
+
+  },
+  cpt: function (e) {
+      this.pt=!this.pt
+  },
+  // cwt: function (e) {
+  //   this.setData({
+  //     wt: (!this.data.wt),
+  //   })
+  // }
+}
+})
+
+</script>
+</html>
